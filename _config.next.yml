@@ -54,7 +54,7 @@ favicon:
   small: /images/icons/favicon-16x16.png
   medium: /images/icons/favicon-32x32.png
   apple_touch_icon: /images/icons/apple-touch-icon.png
-  # safari_pinned_tab: /images/icons/logo.svg
+  safari_pinned_tab: /images/icons/safari-pinned-tab.svg
   #android_manifest: /manifest.json
 
 # Custom Logo (Warning: Do not support scheme Mist)
@@ -141,7 +141,7 @@ sidebar:
 # Sidebar Avatar
 avatar:
   # Replace the default image and set the url here.
-  url: /images/icons/custom-logo.png
+  url: /images/icons/avatar.png
   # If true, the avatar will be displayed in circle.
   rounded: true
   # If true, the avatar will be rotated with the cursor.
