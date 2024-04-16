@@ -105,3 +105,9 @@ deploy:
   type: git
   repo: https://github.com/eddy1937/blog
   branch: gh-pages
+
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
