@@ -111,3 +111,7 @@ search:
   field: post
   content: true
   format: html
+  
+index_generator_plus:
+  path: ''
+  per_page: 10
