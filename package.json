@@ -19,6 +19,7 @@
     "hexo-generator-archive": "2.0.0",
     "hexo-generator-category": "2.0.0",
     "hexo-generator-index": "3.0.0",
+    "hexo-generator-index-i18n": "0.2.1",
     "hexo-generator-index-plus": "1.0.0",
     "hexo-generator-searchdb": "1.4.1",
     "hexo-generator-tag": "2.0.0",
@@ -29,6 +30,6 @@
     "hexo-renderer-stylus": "3.0.0",
     "hexo-server": "3.0.0",
     "hexo-theme-landscape": "1.0.0",
-    "hexo-theme-next": "8.19.2"
+    "hexo-theme-next": "git+https://github.com/eddy1937/hexo-theme-next.git#develop"
   }
 }
