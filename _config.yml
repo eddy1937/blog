@@ -118,3 +118,10 @@ search:
 index_generator_plus:
   path: ''
   per_page: 10
+
+i18n_404:
+  default:
+    title: '抱歉找不到文章'
+  en:
+    title: 'Sorry! Post Not Found'
+    description: 'could not found this post with en'

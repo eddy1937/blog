@@ -1,3 +1,4 @@
+const { title } = require("hexo/dist/hexo/default_config");
 
 const postPermalink = (post) => hexo.execFilterSync('post_permalink', post, {context: hexo});
 
@@ -9,20 +10,28 @@ const postPermalinkBylang = (post, lang) => {
     return path;
 };
 
+const i18n_404 = hexo.config.i18n_404;
+
+const defaultInfo = {
+    title: i18n_404?.default?.title ?? 'Sorry! Post Not Found',
+    description: i18n_404?.default?.description
+}
+
 const generatorNotFoundPost = (path, lang) => {
     return {
         path: path,
         data: {
-            title: 'Sorry! Post Not Found',
+            title: i18n_404[lang]?.title ?? defaultInfo.title,
             lang: lang,
             permalink: path,
+            description: i18n_404[lang]?.description ?? defaultInfo.description
             // content: ''
         },
         layout: ['post'],
     };
 }
 
-hexo.extend.generator.register('i18n-lang-not-found', function(locals){
+hexo.extend.generator.register('i18n-404', function(locals){
     const config = this.config;
     if(!config.language) {
         return [];
