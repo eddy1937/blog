@@ -24,7 +24,8 @@ const generatorNotFoundPost = (path, lang) => {
             title: i18n_404[lang]?.title ?? defaultInfo.title,
             lang: lang,
             permalink: path,
-            description: i18n_404[lang]?.description ?? defaultInfo.description
+            description: i18n_404[lang]?.description ?? defaultInfo.description,
+            copyright: false,
             // content: ''
         },
         layout: ['post'],
