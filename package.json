@@ -29,6 +29,7 @@
     "hexo-renderer-marked": "6.0.0",
     "hexo-renderer-stylus": "3.0.0",
     "hexo-server": "3.0.0",
-    "hexo-theme-landscape": "1.0.0"
+    "hexo-theme-landscape": "1.0.0",
+    "hexo-generator-i18n-404": "git+https://github.com/eddy1937/hexo-generator-i18n-404.git"
   }
 }
