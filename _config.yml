@@ -122,6 +122,7 @@ index_generator_plus:
 i18n_404:
   default:
     title: '抱歉找不到文章'
+    contentPath: scaffolds/404.md
   en:
     title: 'Sorry! Post Not Found'
-    description: 'could not found this post with en'
+    # description: 'could not found this post with en'
