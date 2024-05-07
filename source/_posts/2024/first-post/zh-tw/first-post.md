@@ -3,6 +3,8 @@ title: 你好! 世界
 author: Eddy Lin
 date: 2024-04-14 02:25:32
 tags:
+i18n_404:
+    usePageOn: ['zh-CN']
 ---
 
 {% asset_img image.png %}
