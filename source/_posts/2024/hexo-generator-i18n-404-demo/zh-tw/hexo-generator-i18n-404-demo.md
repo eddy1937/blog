@@ -10,7 +10,8 @@ comments: false
 copyright: false
 ---
 
-此為 {% post_link hexo-generator-i18n-404 %} 的範例文章
+<!-- 此為 {% post_link hexo-generator-i18n-404 %} 的範例文章 -->
+此為 [hexo-generator-i18n-404](/zh-tw/hexo-generator-i18n-404) 的範例文章
 
 <!-- more -->
 
