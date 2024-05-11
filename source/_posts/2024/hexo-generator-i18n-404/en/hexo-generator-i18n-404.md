@@ -3,7 +3,7 @@ title: hexo-generator-i18n-404
 author: Eddy Lin
 lang: en
 date: 2024-05-11 21:45:54
-description: 'Use AI Translation'
+# description: 'Use AI Translation'
 categories:
   - hexo
 tags:
@@ -11,6 +11,8 @@ tags:
   - i18n
   - 404
 ---
+
+> **Use AI Translation**
 
 When using i18n on Hexo, will display a 404 page if you switch to other languages corresponding to the post. However, this package was born to support i18n 404 pages ([hexo-generator-i18n-404](https://github.com/eddy1937/hexo-generator-i18n-404)).
 
