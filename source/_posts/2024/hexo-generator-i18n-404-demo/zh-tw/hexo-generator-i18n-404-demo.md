@@ -8,6 +8,9 @@ categories:
   - hexo
 comments: false
 copyright: false
+i18n_404:
+  enableOnHidden: true
+hidden: true
 ---
 
 <!-- 此為 {% post_link hexo-generator-i18n-404 %} 的範例文章 -->
