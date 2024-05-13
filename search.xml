@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>hexo-generator-i18n-404</title>
+    <url>/en/hexo-generator-i18n-404/</url>
+    <content><![CDATA[<blockquote>
+<p><strong>Use AI Translation</strong></p>
+</blockquote>
+<p>When using i18n on Hexo, will display a 404 page if you switch to other languages corresponding to the post. However, this package was born to support i18n 404 pages (<a href="https://github.com/eddy1937/hexo-generator-i18n-404">hexo-generator-i18n-404</a>).</p>
+<p><strong>Main Features</strong> </p>
+<ul>
+<li>I18n 404 pages</li>
+<li>I18n default posts</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="Enable-Hexo-I18n"><a href="#Enable-Hexo-I18n" class="headerlink" title="Enable Hexo I18n"></a>Enable Hexo I18n</h2><p>First, you need to enable Hexo i18n. Find <code>language</code> in <code>_config.yml</code> and add the languages you want to enable.</p>
+<p>Here we use <code>zh-tw</code>, <code>en</code>, <code>zh-CN</code> as examples. You can find the supported language codes in the Hexo theme you are using.</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># file: _config.yml</span></span><br><span class="line"><span class="attr">language:</span> </span><br><span class="line">  <span class="bullet">-</span> <span class="string">zh-tw</span> <span class="comment"># The first one is the default language</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">en</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">zh-CN</span></span><br></pre></td></tr></table></figure>
+
+<p>Next, set the post link <code>permalink</code> and the file name rule <code>new_post_name</code>. This is for reference only and can be set according to your preference.</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># file: _config.yml</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:lang/:name/</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:year/:title/:lang/:title.md</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="hexo-generator-i18n-404"><a href="#hexo-generator-i18n-404" class="headerlink" title="hexo-generator-i18n-404"></a>hexo-generator-i18n-404</h2><p>Install the hexo-generator-i18n-404 package</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm i git+https://github.com/eddy1937/hexo-generator-i18n-404.git</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="I18n-404-Pages"><a href="#I18n-404-Pages" class="headerlink" title="I18n 404 Pages"></a>I18n 404 Pages</h3><!-- ![](/images/posts/hexo-generator-i18n-404/i18n-404-demo.gif) -->
+<img style="max-width: 480px; width: 100%; margin: 36px auto;" src="/images/posts/hexo-generator-i18n-404/i18n-404-demo.gif" />
+
+<p>Add <code>i18n_404</code> settings in <code>_config.yml</code>. You can set it according to each language. When the language setting cannot be found, it will use default. <a href="/zh-tw/hexo-generator-i18n-404-demo/" title="hexo-generator-i18n-404-demo">Demo Post</a></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># file: _config.yml</span></span><br><span class="line"><span class="attr">i18n_404:</span></span><br><span class="line">  <span class="attr">default:</span></span><br><span class="line">    <span class="attr">title:</span> <span class="string">&#x27;抱歉! 找不到文章&#x27;</span></span><br><span class="line">    <span class="attr">contentPath:</span> <span class="string">scaffolds/404.md</span></span><br><span class="line">  <span class="attr">zh-tw:</span></span><br><span class="line">    <span class="attr">title:</span> <span class="string">&#x27;抱歉! 找不到該文章&#x27;</span>   </span><br><span class="line">    <span class="comment"># description: &#x27;&#x27; </span></span><br><span class="line">  <span class="attr">en:</span></span><br><span class="line">    <span class="attr">title:</span> <span class="string">&#x27;Sorry! Post Not Found&#x27;</span></span><br><span class="line">    <span class="comment"># description: &#x27;&#x27;</span></span><br><span class="line">  <span class="attr">zh-CN:</span></span><br><span class="line">    <span class="attr">title:</span> <span class="string">&#x27;抱歉! 找不到该文章&#x27;</span>   </span><br><span class="line">    <span class="comment"># description: &#x27;&#x27; </span></span><br></pre></td></tr></table></figure>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th width="100%">Description</th>
+  </tr>
+  <tr>
+    <td>title</td>
+    <td>
+      <span>Post title</span>
+      <br>
+      <span>Priority order，lang.title > contentPath.title > default.title</span>
+    </td>
+  </tr>
+  <tr>
+    <td>description</td>
+    <td>
+      <span>Post description</span>
+      <br>
+      <span>Priority order，lang.description > contentPath.description > default.description</span>
+    </td>
+  </tr>
+  <tr>
+    <td>contentPath</td>
+    <td>
+      <span>Content path, you can use a markdown file as a 404 page</span>
+      <br>
+      <span>Priority order，lang.contentPath > default.contentPath</span>
+    </td>
+  </tr>
+</table>
+
+<h3 id="I18n-Default-Posts"><a href="#I18n-Default-Posts" class="headerlink" title="I18n Default Posts"></a>I18n Default Posts</h3><p>Add <code>i18n_404.usePageOn</code> to the post to enable default posts. You can use the current post directly in other language versions (existing language posts will not be affected).</p>
+<p>As shown below, you can display the <code>zh-tw</code> post in the <code>zh-CN</code> language.</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># file: your_post.md</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">post_title</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">Eddy</span> <span class="string">Lin</span></span><br><span class="line"><span class="attr">lang:</span> <span class="string">zh-tw</span></span><br><span class="line"><span class="attr">i18n_404:</span></span><br><span class="line">  <span class="attr">usePageOn:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">zh-CN</span></span><br></pre></td></tr></table></figure>
+
+<p>You can also set <code>i18n_404.usePageOn</code> to <code>all</code> to use this post in all languages.</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">lang:</span> <span class="string">zh-tw</span></span><br><span class="line"><span class="attr">i18n_404:</span></span><br><span class="line">  <span class="attr">usePageOn:</span> <span class="string">all</span></span><br></pre></td></tr></table></figure>
+
+<p>This post only has <code>zh-tw</code>, <code>en</code> versions. You can switch the language to Simplified Chinese(简体中文) <code>zh-CN</code> to check the effect</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo-generator</tag>
+        <tag>i18n</tag>
+        <tag>404</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo-generator-i18n-404</title>
+    <url>/zh-tw/hexo-generator-i18n-404/</url>
+    <content><![CDATA[<p>Hexo 在使用多語系時，如果切換到文章對應的其他語系會顯示 404 頁面，然而此套件就是為了支援多語系的 404 頁面而誕生 (<a href="https://github.com/eddy1937/hexo-generator-i18n-404">hexo-generator-i18n-404</a>)。</p>
+<p><strong>主要功能</strong> </p>
+<ul>
+<li>多語系 404 頁面</li>
+<li>多語系預設文章</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="啟用-Hexo-多語系"><a href="#啟用-Hexo-多語系" class="headerlink" title="啟用 Hexo 多語系"></a>啟用 Hexo 多語系</h2><p>首先需要先啟用 Hexo 的多語系，在 _config.yml 中找到 <code>language</code>，後在下方新增要啟用的語系</p>
+<p>這裡使用 <code>zh-tw</code>、<code>en</code>、<code>zh-CH</code> 為例，可以在使用的 hexo theme 找到支援的語系代號</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># file: _config.yml</span></span><br><span class="line"><span class="attr">language:</span> </span><br><span class="line">  <span class="bullet">-</span> <span class="string">zh-tw</span> <span class="comment"># 第一個為預設語系</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">en</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">zh-CN</span></span><br></pre></td></tr></table></figure>
+
+<p>再來設定文章連結 <code>permalink</code> 以及檔案名稱規則 <code>new_post_name</code>，僅供參考可以依照自己喜好設定</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># file: _config.yml</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:lang/:name/</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:year/:title/:lang/:title.md</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="hexo-generator-i18n-404"><a href="#hexo-generator-i18n-404" class="headerlink" title="hexo-generator-i18n-404"></a>hexo-generator-i18n-404</h2><p>安裝 hexo-generator-i18n-404 套件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm i git+https://github.com/eddy1937/hexo-generator-i18n-404.git</span><br></pre></td></tr></table></figure>
+
+<h3 id="多語系-404-頁面"><a href="#多語系-404-頁面" class="headerlink" title="多語系 404 頁面"></a>多語系 404 頁面</h3><!-- ![](/images/posts/hexo-generator-i18n-404/i18n-404-demo.gif) -->
+<img style="max-width: 480px; width: 100%; margin: 36px auto;" src="/images/posts/hexo-generator-i18n-404/i18n-404-demo.gif" />
+
+<p>在 _config.yml 中新增 <code>i18n_404</code> 設定，可以依照各語系設定，在找不到語系設定時會使用 <code>default</code>，<a href="/zh-tw/hexo-generator-i18n-404-demo/" title="hexo-generator-i18n-404-demo">Demo Post</a></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># file: _config.yml</span></span><br><span class="line"><span class="attr">i18n_404:</span></span><br><span class="line">  <span class="attr">default:</span></span><br><span class="line">    <span class="attr">title:</span> <span class="string">&#x27;抱歉! 找不到文章&#x27;</span></span><br><span class="line">    <span class="attr">contentPath:</span> <span class="string">scaffolds/404.md</span></span><br><span class="line">  <span class="attr">zh-tw:</span></span><br><span class="line">    <span class="attr">title:</span> <span class="string">&#x27;抱歉! 找不到該文章&#x27;</span>   </span><br><span class="line">    <span class="comment"># description: &#x27;&#x27; </span></span><br><span class="line">  <span class="attr">en:</span></span><br><span class="line">    <span class="attr">title:</span> <span class="string">&#x27;Sorry! Post Not Found&#x27;</span></span><br><span class="line">    <span class="comment"># description: &#x27;&#x27;</span></span><br><span class="line">  <span class="attr">zh-CN:</span></span><br><span class="line">    <span class="attr">title:</span> <span class="string">&#x27;抱歉! 找不到该文章&#x27;</span>   </span><br><span class="line">    <span class="comment"># description: &#x27;&#x27; </span></span><br></pre></td></tr></table></figure>
+
+<table>
+  <tr>
+    <th>名稱</th>
+    <th width="100%">說明</th>
+  </tr>
+  <tr>
+    <td>title</td>
+    <td>
+      <span>文章標題</span>
+      <br>
+      <span>優先順序，lang.title > contentPath.title > default.title</span>
+    </td>
+  </tr>
+  <tr>
+    <td>description</td>
+    <td>
+      <span>文章描述</span>
+      <br>
+      <span>優先順序，lang.description > contentPath.description > default.description</span>
+    </td>
+  </tr>
+  <tr>
+    <td>contentPath</td>
+    <td>
+      <span>內容路徑，可以使用 markdown 檔案作為 404 頁面</span>
+      <br>
+      <span>優先順序，lang.contentPath > default.contentPath</span>
+    </td>
+  </tr>
+</table>
+
+<h3 id="多語系預設文章"><a href="#多語系預設文章" class="headerlink" title="多語系預設文章"></a>多語系預設文章</h3><p>在 post 上新增 <code>i18n_404.usePageOn</code> 來啟用預設文章，可以將當前 post 直接使用在其他語系版本 (已存在之語系文章不會受影響)</p>
+<p>如下所示，可以將 <code>zh-tw</code> 語系文章，顯示在沒有文章的 <code>zh-CN</code> 語系</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># file: your_post.md</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">post_title</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">Eddy</span> <span class="string">Lin</span></span><br><span class="line"><span class="attr">lang:</span> <span class="string">zh-tw</span></span><br><span class="line"><span class="attr">i18n_404:</span></span><br><span class="line">  <span class="attr">usePageOn:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">zh-CN</span></span><br></pre></td></tr></table></figure>
+
+<p>也可以將 <code>i18n_404.usePageOn</code> 設定為 <code>all</code>，使該篇 post 使用在所有語系上</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">lang:</span> <span class="string">zh-tw</span></span><br><span class="line"><span class="attr">i18n_404:</span></span><br><span class="line">  <span class="attr">usePageOn:</span> <span class="string">all</span></span><br></pre></td></tr></table></figure>
+
+<p>本篇文章只有 <code>zh-tw</code>、<code>en</code> 版本，可以在下方切換語系至簡體中文 <code>zh-CN</code> 可以查看效果</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo-generator</tag>
+        <tag>i18n</tag>
+        <tag>404</tag>
+      </tags>
+  </entry>
+</search>
